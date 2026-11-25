@@ -1,9 +1,12 @@
-import 'package:aisyiyah_smartlife/modules/jadwalKegiatan/models/KegiatanModel.dart';
+import 'package:aisyiyah_smartlife/jadwalKegiatan/models/KegiatanModel.dart';
 import 'package:get/get.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 class DetailKegiatanController extends GetxController {
-  final supabase = Supabase.instance.client;
+  final SupabaseClient supabase;
+
+  DetailKegiatanController({SupabaseClient? supabaseClient})
+      : supabase = supabaseClient ?? Supabase.instance.client;
 
   var isLoading = false.obs;
   var getOne_kegiatan = Rxn<KegiatanModel>(); // Menyimpan satu data kegiatan
