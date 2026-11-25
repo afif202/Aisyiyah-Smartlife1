@@ -1,10 +1,13 @@
-import 'package:aisyiyah_smartlife/routes/app_pages.dart';
+import 'package:aisyiyah_smartlife/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 class SignUp_controller extends GetxController {
-  final supabase = Supabase.instance.client;
+  final SupabaseClient supabase;
+
+  SignUp_controller({SupabaseClient? supabaseClient})
+      : supabase = supabaseClient ?? Supabase.instance.client;
 
   // --- CONTROLLERS ---
   final firstNameController = TextEditingController();
