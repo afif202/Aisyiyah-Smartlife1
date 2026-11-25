@@ -1,10 +1,10 @@
-import 'package:get/get.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
-
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 class DetailStats_service {
-  final supabase = Supabase.instance.client;
+  final SupabaseClient supabase;
+
+  DetailStats_service({SupabaseClient? supabaseClient})
+      : supabase = supabaseClient ?? Supabase.instance.client;
 
   Future<List<Map<String, dynamic>>> fetchListItems(String targetType) async {
     try {
