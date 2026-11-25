@@ -5,7 +5,10 @@ import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 
 class UmkmController extends GetxController {
-  final supabase = Supabase.instance.client;
+  final SupabaseClient supabase;
+
+  UmkmController({SupabaseClient? supabaseClient})
+      : supabase = supabaseClient ?? Supabase.instance.client;
 
   var umkmList = <Map<String, dynamic>>[].obs;
 
