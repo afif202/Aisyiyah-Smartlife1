@@ -5,7 +5,10 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:flutter/material.dart';
 
 class FormDonasi_controller extends GetxController {
-  final supabase = Supabase.instance.client;
+  final SupabaseClient supabase;
+
+  FormDonasi_controller({SupabaseClient? supabaseClient})
+      : supabase = supabaseClient ?? Supabase.instance.client;
 
   final namaController = TextEditingController();
   final deskripsiController = TextEditingController();
