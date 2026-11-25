@@ -2,7 +2,10 @@ import 'package:get/get.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 class DetailUmkmController extends GetxController {
-  final supabase = Supabase.instance.client;
+  final SupabaseClient supabase;
+
+  DetailUmkmController({SupabaseClient? supabaseClient})
+      : supabase = supabaseClient ?? Supabase.instance.client;
 
   var data = Rxn<Map<String, dynamic>>();
   var loading = true.obs;
