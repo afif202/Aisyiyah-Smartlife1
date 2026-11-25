@@ -1,4 +1,4 @@
-import 'package:aisyiyah_smartlife/routes/app_pages.dart';
+import 'package:aisyiyah_smartlife/routes/app_routes.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
